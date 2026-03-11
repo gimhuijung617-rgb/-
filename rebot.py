@@ -22,8 +22,8 @@ def keep_alive():
     t.start()
 
 # --- 1. 설정 (토큰과 키를 입력하세요) ---
-DISCORD_TOKEN = 'MTQ4MDg0ODM4Mjg2MjgxOTQ1Mg.GIAGd0.d-rYOmDSM7cAZf65atAJbxLJ7IgZ1lWFi_Z8Fw'
-GEMINI_API_KEY = 'AIzaSyCt29NnwMTgzxZIf2ZWRZCrXY6pYMQuMHA'
+DISCORD_TOKEN = ''
+GEMINI_API_KEY = ''
 
 # Gemini 초기화 (최신 안정화 모델 사용)
 genai.configure(api_key=GEMINI_API_KEY)
@@ -242,4 +242,5 @@ async def appeal(ctx, *, reason: str):
 
 
 bot.run(DISCORD_TOKEN)
+
 
