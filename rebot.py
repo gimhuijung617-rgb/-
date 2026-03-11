@@ -4,6 +4,23 @@ import google.generativeai as genai
 import json
 import os
 
+from flask import Flask
+from threading import Thread
+
+# --- [추가 2] 가짜 웹 서버 설정 ---
+app = Flask('')
+
+@app.route('/')
+def home():
+    return "저지맨/머시깽이가 24시간 감시 중입니다!"
+
+def run():
+    app.run(host='0.0.0.0', port=8080)
+
+def keep_alive():
+    t = Thread(target=run)
+    t.start()
+
 # --- 1. 설정 (토큰과 키를 입력하세요) ---
 DISCORD_TOKEN = 'DISCORD_TOKEN2'
 GEMINI_API_KEY = 'GEMINI_API_KEY2'
@@ -222,5 +239,6 @@ async def appeal(ctx, *, reason: str):
 
         except Exception as e:
             await ctx.send(f"⚠️ 이의 제기 처리 중 오류: {e}")
+
 
 bot.run(DISCORD_TOKEN)
