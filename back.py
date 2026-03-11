@@ -22,8 +22,8 @@ def keep_alive():
     t.start()
 
 # --- 1. 설정 ---
-DISCORD_TOKEN = 'MTQ4MTI1MjY4OTU0MjM4NTY4NA.GUd9ZO.hewXiWQ_xun2N6Tk0OVv_NhD_D-zQZ1KJBCUpA'
-GEMINI_API_KEY = 'AIzaSyDhcul31jt9cmtcIoRkr6N7ywx1K3C_sDY'
+DISCORD_TOKEN = '='
+GEMINI_API_KEY = 'A'
 
 # Gemini 설정
 genai.configure(api_key=GEMINI_API_KEY)
@@ -110,4 +110,5 @@ async def judge(ctx, *, content: str):
 
 
 bot.run(DISCORD_TOKEN)
+
 
